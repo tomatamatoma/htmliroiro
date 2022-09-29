@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動く粒</title>
+</head>
+<body>
+    <canvas id="can"></canvas>
+    <script>
+        const SCREEN_W = 800;
+        const SCREEN_H = 600;
+ 
+        let can = document.getElementById("can");
+        let con = can.getContext("2d");
+
+        //色の配列
+        let colors = [
+            "red", "yellow", "white", "orange", "gold", "silver", "green"
+        ];
+
+        //ランダムの関数
+        function rand(min,max) {
+           return (Math.floor(Math.random()*(max-min+1)+min));
+       }
+ 
+        can.width = SCREEN_W;
+        can.height = SCREEN_H;
+        can.style.backgroundColor="black";
+       
+        //花火のクラス
+        class Hanabi {
+
+            //コンストラクターで粒を作る
+            constructor(x, y, vx, vy, gv) {
+                this.x = x;
+                this.y = y;
+                this.vx = vx;
+                this.vy = vy;
+                this.gv = gv;
+                con.fillStyle = colors[rand(0,colors.length)];
+                this.color = con.fillStyle;
+                con.fillRect(this.x, this.y, 2, 2);
+            }
+
+            
+        }
+ 
+        //空の配列を作る
+        let hanabi = [];
+
+        //空の配列の中にプッシュでクラスを1000回インスタンスする（コンストラクターを1000回実行する）
+        for(let i=0; i<1000; i++){
+            hanabi.push(new Hanabi(rand(0,800),rand(0,600),rand(-3,3),rand(-3,3),80));
+        }
+        
+        
+        
+        
+        //1000/60秒でmainLoop関数を動かす
+        setInterval( mainLoop, 1000/60);
+
+
+        function mainLoop() {
+           con.clearRect(0,0,800,600);
+           
+           for(let i=0; i<1000; i++) {
+               if(hanabi[i].x<0 || hanabi[i].x>800) hanabi[i].vx*=-1;
+                if(hanabi[i].y<0 || hanabi[i].y>600) hanabi[i].vy*=-1;
+               hanabi[i].x+=hanabi[i].vx;
+               hanabi[i].y+=hanabi[i].vy;
+               //x軸y軸両方の動きが無い粒にもう一度ランダムで動きを入れる
+               if(hanabi[i].vx==0 && hanabi[i].vy==0) {
+                   hanabi[i].vx = rand(-3,3);
+                   hanabi[i].vy = rand(-3,3);
+               }
+               con.fillStyle = hanabi[i].color;
+                con.fillRect(hanabi[i].x, hanabi[i].y, 2, 2);
+           }
+          
+        }
+
+ 
+ 
+    </script>
+   
+</body>
+
+</html>
