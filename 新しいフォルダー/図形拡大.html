@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <canvas id="can"></canvas>
+  <script>
+    let elm = document.getElementById( "can" ) ;
+	let con = elm.getContext( "2d" ) ;
+
+	elm.width = 800;
+	elm.height= 800;
+	elm.style.backgroundColor = "#cccccc";
+	let i = 0;
+	let j = 0;
+	
+
+   function aa() {
+
+		setInterval(tes, 1000 / 60);
+	
+		function tes() {
+    	con.fillStyle="red";
+    	con.fillRect(375-i,375-i,50+2*i,50+2*i);
+    	i++;
+    	}
+    }
+    
+   
+    
+    
+    
+  </script>
+  <p><input type="button" name="button1" value="1" onclick="aa()"></p>
+  
+  <p><input type="button" name="button2" value="100" onclick="bb()"></p>
+</body>
+
+</html>

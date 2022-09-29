@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body style>		
+<canvas id = "can"></canvas>
+<script>
+
+let elm = document.getElementById("can");
+let con = elm.getContext("2d");
+
+let x = 0;
+let y = 0;
+let sx = 50;
+let sy = 50;
+let vx = 1;
+let vy = 1;
+
+elm.width = 800;
+elm.height = 500;
+elm.style.backgroundColor = "red";
+
+
+let main = () => {
+
+
+	con.clearRect(0,0,800,500);
+
+	x += vx;
+	y += vy;
+	
+	if( x<=0 || x+50>=800 ) vx *= -1;
+	if( y<=0 || y+50>=500 ) vy *= -1;
+
+	con.fillStyle =" #777777";
+	con.fillRect(x,y,50,50);
+}
+
+setInterval( main, 1000/60 );
+
+</script>
+</body>
+</html>
+	

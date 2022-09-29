@@ -1,0 +1,16 @@
+header {
+	color: red;
+	background-color: rgb(167, 170, 164);
+	margin: 0,auto;
+	height: 100px;
+}
+
+footer {
+	background-color: grey;
+	height: 100px;
+}
+
+.contents {
+	background-color: cornflowerblue;
+	height: 500px;
+}

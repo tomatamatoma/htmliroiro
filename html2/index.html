@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<title>
+test
+</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+</head>
+
+<script type="text/javascript">
+
+var n;
+	<!--
+	function aa(){
+	document.form1.button1.value*=2
+	document.form1.button2.value*=4
+	}
+	
+	function bb(){
+	document.form1.button3.value*=100
+	document.form1.button2.value*=20
+	}
+	
+	function cc(){
+	document.write("こんにちは！")
+	alert("こんにちは")
+	}
+
+	function dd(){
+	document.form1.button3.value=n
+	document.form1.button2.value*=20
+	}
+	
+
+	function fncCall(){
+	var mas = "関数が呼び出されました！";
+	alert(mas);
+	}
+
+	function ee(){
+	var a = 1;
+	alert(a);
+
+	}
+	-->
+
+
+n = 1;
+document.write( n + "<br>" );  //結果は1
+
+n = n + 2;
+document.write( n + "<br>" );  //結果は3
+
+n++;
+document.write( n + "<br>" ); 
+	
+
+ document.write("こんにちは！");
+</script>
+
+<body>
+	<font size="1">
+	test
+	</font>
+test<br>
+
+<form name="form1">
+<p><input type="button" name="button1" value="1" onclick="aa()"></p>
+<p><input type="button" name="button2" value="100" onclick="aa()"></p>
+
+<p><input type="button" name="button3" value="2" onclick="bb()"></p>
+<p><input type="button" name="button4" value="2" onclick="cc()"></p>
+
+<p><input type="button" name="button5" value="2" onclick="dd()"></p>
+
+<button type="button" onclick="aa()">ボタン１</button>
+<button type="button" onclick="fncCall()">ボタン２</button>
+<button type="button" onclick="ee()">ボタン３</button>
+</body>
+</html>

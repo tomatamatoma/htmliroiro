@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<body style="font-saze:40px;">
+<script>
+	
+
+	
+
+	let x = 2;
+	let score = 1000;
+	let y;
+	if( x == 1 )
+	{
+		y=1;
+	}
+	else if( x == 2 )
+	{
+		y=3;
+	}
+	else
+	{
+		y=2;
+	}
+
+
+
+	document.write(y + "<br>");
+
+	let myName = "田中";
+	let myHeight = 188;
+	let myWeight = 150;
+	let myBMI = myWeight / (myHeight*myHeight/10000);
+	//score = score + 1;
+	//score = score + 1;
+	score++;
+	//score++;
+	document.write(score + "<br>");
+
+
+	document.write(myName + "、おはよう<br>");
+	document.write("身長は"+myHeight+"<br>");
+	document.write("体重は"+myWeight+"<br>");
+	document.write("あなたのBMIは" +myBMI+"点です。<br>");
+	document.write(myName+"さようなら！<br>");
+	document.write("<br>");
+
+	const BMI_YASE1 = 18.5;
+	const BMI_YASE2 = 20.5;
+	const BMI_NORMAL = 25.5;
+	const BMI_FAT1   = 30.0;
+	const BMI_FAT2   = 35.0;
+	const BMI_FAT3   = 40.0;
+
+	if( myBMI <= BMI_YASE1 ){
+
+		document.write("ガリガリですやん！<br>");
+
+	}else if( myBMI <= BMI_YASE2 ){
+
+		document.write("ガリですやん！<br>");
+
+	}else if( myBMI <= BMI_NORMAL ){
+
+		document.write("普通ですやん！<br>");
+
+	}else if( myBMI <= BMI_FAT1 ){
+
+		document.write("ちょいぽちゃですやん！<br>");
+
+	}else if( myBMI <= BMI_FAT2 ){
+
+		document.write("ぽちゃですやん！<br>");
+
+	}else{
+
+	document.write("でぶですやん！<br>");
+	}
+
+</script>
+</body>
+</html>

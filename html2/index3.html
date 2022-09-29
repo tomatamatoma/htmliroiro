@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<title>
+test
+</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+</head>
+
+<script type="text/javascript">
+
+var n;
+	<!--
+	function aa(){
+	document.form1.button1.value*=2
+	document.form1.button2.value*=4
+	}
+	
+	function bb(){
+	document.form1.button3.value*=100
+	document.form1.button2.value*=20
+	}
+	
+	function cc(){
+	document.write("こんにちは！")
+	alert("こんにちは")
+	}
+
+	function dd(){
+	document.form1.button3.value=n
+	document.form1.button2.value*=20
+	}
+	
+
+	function fncCall(){
+	var mas = "関数が呼び出されました！";
+	alert(mas);
+	}
+
+	function ee(){
+	var a = 1;
+	alert(a);
+
+	}
+
+
+
+
+	function myFunction() {
+	let area1 = getArea();
+  	alert(area1);
+  	
+	}
+
+	function getArea(){
+  	let base = 7;
+  	let height = 10;
+  	let area = base * height / 2;
+  	return area;
+	}
+
+
+
+
+
+	-->
+
+</script>
+
+<body>
+	<font size="1">
+	test
+	</font>
+test<br>
+
+<form name="form1">
+
+<!--ボタン1-->
+<p><input type="button" name="button1" value="1" onclick="myFunction()"></p>
+
+<!--ボタン2-->
+<p><input type="button" name="button2" value="100" onclick="aa()"></p>
+
+<!--ボタン3-->
+<p><input type="button" name="button3" value="2" onclick="bb()"></p>
+
+<!--ボタン4-->
+<p><input type="button" name="button4" value="2" onclick="cc()"></p>
+
+<!--ボタン5-->
+<p><input type="button" name="button5" value="2" onclick="dd()"></p>
+
+<!--ボタン6-->
+<button type="button" onclick="aa()">ボタン１</button>
+
+<!-ボタン7--->
+<button type="button" onclick="fncCall()">ボタン２</button>
+
+<!--ボタン8-->
+<button type="button" onclick="ee()">ボタン３</button>
+</body>
+</html>

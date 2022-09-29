@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<title>
+</title>
+</head>
+<body>
+
+
+<canvas id="can"></canvas>
+<script>
+
+let x = 10;
+let y = 20;
+let sx = 50;
+let sy = 40;
+
+let colors = [
+	"blue",
+	"yellow",
+	"pink",
+	"green",
+	"skyblue"
+];
+
+
+let elm = document.getElementById("can");
+let con = elm.getContext("2d");
+
+elm.width = 800;
+elm.height = 500;
+elm.style.backgroundColor = "orange";
+
+
+for(let i=0; i<8; i++)
+{
+	con.fillStyle = colors[i%5];
+	con.fillRect(x + i*(sx+2),y,sx,sy);
+	for(let j=0; j<8; j++)
+	{
+	
+		con.fillStyel = "white";
+		con.fillRect(x + i*(sx+2),y + j *(sy+4),sx,sy);
+	}
+}
+
+
+
+for(let i=0; i<5; i++)
+{
+	let test_1 = x+(i*x+2);
+	document.write(test_1+"<br>");
+}
+</script>
+</body>
+</html>
+
+
+
+
+</body>

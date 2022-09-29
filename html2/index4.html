@@ -1,0 +1,67 @@
+<html>
+<body>
+ <canvas id="can"></canvas>
+<script>
+const SCREEN_W = 1000;
+const SCREEN_H = 800;
+
+let elm = document.getElementById("can");
+let con = elm.getContext("2d");
+elm.width = SCREEN_W;
+elm.height = SCREEN_H;
+elm.style.backgroundColor = "#dddddd";
+
+
+
+setInterval( main, 1000/3 );
+let i = 2;
+//点滅の四角形の描画
+function main(){
+
+	
+	con.fillStyle="black";
+	con.fillRect(20,20,30,30);
+
+	if(i%2===0){
+	con.fillStyle="yellow";
+	con.fillRect(10,10,50,50);
+	}else{
+	con.fillStyle="blue";
+	con.fillRect(10,10,50,50);
+	}
+	
+	con.fillStyle="black";
+	con.fillRect(20,20,30,30);
+i++;
+
+}
+
+
+
+//青い四角形の描画
+con.rect(20,50,80,80);
+con.fillStyle="blue";
+//黒い淵
+con.shadowColor="black";
+//淵のぼかし
+con.shadowBlur=15;
+
+con.fill();
+//黄色い円の描画
+con.fillStyle="yellow";
+ //con.beginPath();
+con.arc(150, 150, 10, 0, Math.PI*2, false);
+con.fill(); 
+
+
+ con.beginPath () ;
+
+con.rotate( 500 * Math.PI / 3000 ) ;
+
+con.fillStyle = "red" ;
+con.fillRect( 75, 75, 50, 50 ) ;
+
+
+</script>
+<input type="button" id="button1">
+</html>
